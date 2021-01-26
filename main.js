@@ -27,7 +27,11 @@ document.getElementById('withdrawBtn').addEventListener('click', function(){
 function getInputValue(Id){
     const inputAmount = document.getElementById(Id).value;
     const amountValue = parseFloat(inputAmount);
-    return amountValue;
+     if(isNaN(amountValue)){
+        return 0;
+    }else{
+        return amountValue;
+    }
 }
 function updateInputValue(Id, addedValue){
     const current = document.getElementById(Id).innerText;
